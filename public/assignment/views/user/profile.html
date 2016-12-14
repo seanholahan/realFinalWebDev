@@ -1,0 +1,41 @@
+<script src="profile.controller.client.js"></script>
+<div class="container">
+    <h1>Profile</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input ng-model="model.user.username" type="text" class="form-control" id="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" ng-model="model.user.email" class="form-control" id="email" placeholder="alice@wonderland.com">
+        </div>
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input ng-model="model.user.first" type="text" class="form-control" id="first-name" placeholder="Alice">
+        </div>
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input ng-model="model.user.last" type="text" class="form-control" id="last-name" placeholder="Wonderland">
+        </div>
+    </form>
+
+    <a  ng-click="model.updateUser(model.user)" class="btn btn-primary btn-block loginButtons" href="">Update Account</a>
+    <a  ng-click="model.unregisterUser(model.user._id)" class="btn btn-primary btn-block loginButtons" href="">Delete Account</a>
+    <a   class="btn btn-primary btn-block loginButtons" href="#/profile/{{model.user._id}}/product">Continue Shopping</a>
+    <a class="btn btn-warning btn-block"
+       ng-show="model.user.role == 'ADMIN'"
+       href="#/admin">Admin</a>
+
+{{model}}
+
+    <div class="filterContainer">
+        <div ng-repeat="user in model.users" class="list-group-item">
+            <a  href="#">
+                <img class="img-responsive centered" src="images/d2.2.jpg" >
+                <h5 class="text-center">EDIT {{product.title}}</h5>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <h1>Create Product</h1>
+
+            {{model.product}}
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" name="Title" class="form-control" id="title" ng-model="model.product.title" placeholder="Title">
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" name="price" class="form-control" id="price" ng-model="model.product.price" placeholder="$">
+            </div>
+
+            <div class="form-group">
+                <label for="size" >Size</label>
+                <input type="text" name="passwordConfirm" class="form-control" id="size" ng-model="model.product.size" placeholder="Size">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" name="description" class="form-control" id="description" ng-model="model.product.description" placeholder="Details/Materials Used">
+            </div>
+
+            <!--<form   action="/api/upload"  method="post" enctype="multipart/form-data">
+                <label for="myFile" >Upload File</label>
+                <input  name="myFile" id="myFile"  type="file" class="form-control" />
+                <input  name="width"    value="50%" style="display: none"/>
+                <input  name="productId" value="{{model.product._id}}"   style="display: none"/>
+                <button ng-click="model.uploadImage()" type="submit"   class="btn btn-block btn-primary">Upload Image</button>
+            </form>-->
+
+            <form action="/api/upload"  method="post" enctype="multipart/form-data">
+                <label for="myFile" >Upload File</label>
+                <input  name="myFile" id="myFile"  type="file" class="form-control"/>
+                <input  name="width"    value="50%" style="display: none"/>
+                <input  name="productId" value="{{model.product._id}}"   style="display: none"/>
+                <button type="submit"   class="btn btn-block btn-primary">Upload Image</button>
+            </form>
+            <br>
+
+
+
+            <a  ng-click="model.updateProduct(model.product)" class="btn btn-primary btn-block loginButtons" href="">Update Product</a>
+            <a  ng-click="model.removeProduct(model.product)" class="btn btn-primary btn-block loginButtons" href="">Delete Product</a>
+        </div>
+    </div>
+</div>
+
+

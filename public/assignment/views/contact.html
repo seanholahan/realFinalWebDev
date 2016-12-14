@@ -1,0 +1,57 @@
+<div class="parallax">
+    <div class="parallax__layer parallax__layer--back">
+
+        <img src="images/shirtSlice3.png"; class ="slice1"   />
+    </div>
+    <div class="parallax__layer parallax__layer--base">
+
+        <img src="images/shirtSlice2.png"; class ="slice2"   />
+
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <h1> Want a custom tailored shirt!? Let us know what you have in mind!</h1>
+            <form method="post"  name= "form" id="contact_form"
+                  action="contact.php">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
+                    <small id="emailHelp" class="form-text text-muted" action="contact.php"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="no" class="form-text text-muted" action="contact.php"></small>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="inquiry">Message</label>
+                    <textarea type="text" name="message" class="form-control" rows="5" id="inquiry"
+                              placeholder="Message Content"></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary" name ="submit" value="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script language="JavaScript">
+    // Code for validating the form
+    // Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
+    // for details
+    var formvalidator = new Validator("contact");
+    formvalidator.addValidation("name","req","Please provide your name");
+    formvalidator.addValidation("email","req","Please provide your email");
+    formvalidator.addValidation("requests","text","Please write a message");
+</script>

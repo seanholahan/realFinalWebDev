@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="redirectApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Dev Course Home Page</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+</head>
+<body ng-controller="redirectController">
+</body>
+<script type="text/javascript">
+    (function () {
+        angular
+                .module("redirectApp", [])
+                .controller("redirectController", function ($location, $window) {
+                    var address = $location.absUrl();
+                    function init() {
+                        $window.location.href = address + "assignment/#";
+                    }
+                    init();
+                });
+    })();
+</script>
+</html>
