@@ -13,10 +13,26 @@ module.exports = function () {
         updateProduct: updateProduct,
         findSmallProducts: findSmallProducts,
         findMediumProducts: findMediumProducts,
-        findLargeProducts: findLargeProducts
+        findLargeProducts: findLargeProducts,
+        addToCart: addToCart
 
     };
     return api;
+
+    function addToCart(product, userId) {
+
+
+        return model.userModel
+            .findUserById(userId)
+            .then(function(userObj){
+                console.log(userObj, "this is user");
+                console.log(product,"hehehe");
+                userObj.products.push(product);
+                userObj.save();
+            }, function(error){
+                console.log(error);
+            });
+    }
 
 
     function removeProduct(productId) {

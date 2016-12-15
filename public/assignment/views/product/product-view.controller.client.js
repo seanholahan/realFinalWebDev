@@ -6,6 +6,9 @@
     function ProductViewController($routeParams, ProductService, $location) {
         var vm = this;
         vm.productId = $routeParams['pid'];
+        vm.userId = $routeParams['uid'];
+        console.log(vm.productId, vm.userId, "go")
+        vm.addToCart = addToCart;
 
         function init() {
             console.log(vm.productId);
@@ -22,6 +25,15 @@
                 });
         }
         init();
+
+        function addToCart( product) {
+
+            console.log(vm.productId, vm.userId, "vm");
+            console.log(product);
+            ProductService.addToCart(product, vm.userId);
+
+        }
+
 
     }
 })();

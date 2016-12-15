@@ -12,6 +12,7 @@ module.exports = function(app, model, $routeParams) {
     app.get("/api/productSmall", findProductsSmall);
     app.get("/api/productMedium", findProductsMedium);
     app.get("/api/productLarge", findProductsLarge);
+    app.post("/api/product/addToCart", addToCart);
 
 
     function uploadImage(req, res) {
@@ -19,7 +20,7 @@ module.exports = function(app, model, $routeParams) {
         var productId = req.body.productId;
         var myFile = req.file;
 
-        var mimetype = myFile.mimetype;
+        //var mimetype = myFile.mimetype;
         var originalName = myFile.originalname;
         var fileName = myFile.filename+"."+mimetype;
         var path = myFile.path;
@@ -29,6 +30,24 @@ module.exports = function(app, model, $routeParams) {
 
         console.log("ys1!!", req.body);
         res.send(myFile);
+    }
+
+    function addToCart(req, res){
+        var product = req.body.product;
+        var userId = req.body.userId;
+        console.log(product, "addtocart", userId);
+        model
+            .productModel
+            .addToCart(product, userId)
+            .then(
+                function(uid, newProduct) {
+                    res.send(newProduct);
+                },
+                function(error) {
+                    res.sendStatus(400).send(error);
+                }
+            );
+
     }
 
     function removeProduct(req, res) {

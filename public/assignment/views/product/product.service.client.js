@@ -13,10 +13,21 @@
             uploadImage: uploadImage,
             removeProduct: removeProduct,
             updateProduct: updateProduct,
-            findProductsBySize: findProductsBySize
+            findProductsBySize: findProductsBySize,
+            addToCart: addToCart
         };
 
         return api;
+
+        function addToCart(product, userId) {
+            console.log(userId, "service client");
+            var url = "/api/product/addToCart";
+            var data = {
+                product: product,
+                userId: userId
+            };
+            return $http.post(url, data);
+        }
 
         function removeProduct(productId) {
             var url = "/api/product/"+productId;

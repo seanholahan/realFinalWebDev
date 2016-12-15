@@ -14,6 +14,8 @@ body {
 
 }
 
+
+
 .list-group-item {
     width: 32%;
 
@@ -254,6 +256,13 @@ h4 {
     margin-bottom: 10px;
 }
 
+.container {
+    width: 90%;
+}
+.black {
+    color: black;
+}
+
 
 
 
@@ -262,13 +271,20 @@ a:hover  {
 }
 
 .loginButtons {
-    margin-top: 20px;
+
     background-color: black;
     color: white;
     border-radius: 0px;
     border-width: 3px;
     border: 3px solid white;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
 
+.backButton {
+    width: 72px;
+    float: left;
 }
 
 .loginButtons:hover {
@@ -290,6 +306,33 @@ a:hover  {
 }
 
 .btn-danger.active, .btn-danger:active, .open>.dropdown-toggle.btn-danger {
+    background-color: #464646;
+    color: white;
+    border-color: #adadad;
+}
+
+
+.dropdown-menu {
+    text-align: center;
+}
+
+.dropdown-item {
+    color: black;
+}
+
+.dropdown-menu {
+    width :100%;
+
+}
+
+
+.open>.dropdown-toggle.btn-danger:hover {
+    background-color: #464646;
+    color: white;
+    border-color: #adadad;
+}
+
+.open>.dropdown-toggle.btn-danger {
     background-color: #464646;
     color: white;
     border-color: #adadad;

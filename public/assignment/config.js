@@ -73,6 +73,12 @@
                 controllerAs: "model"
             })
 
+            .when("/profile/:uid/edit", {
+                templateUrl: "views/user/profile-edit.view.html",
+                controller: "ProfileController",
+                controllerAs: "model"
+            })
+
             .when("/register", {
                 templateUrl: "views/user/register.html",
                 controller: "RegisterController",

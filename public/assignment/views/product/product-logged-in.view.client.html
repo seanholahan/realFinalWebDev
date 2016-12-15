@@ -42,9 +42,9 @@
             <div class = "text">
                 <h3 class = "title">{{model.product.title}}</h3>
                 <h4 class = "description">Size: {{model.product.size}}<br>${{model.product.price}}<br>{{model.product.description}}</h4>
-                <a  ng-click="model.updateUser(model.user)" class="btn btn-primary btn-block loginButtons" href="">Update Account</a>
-                <a  ng-click="model.unregisterUser(model.user._id)" class="btn btn-primary btn-block loginButtons" href="">Delete Account</a>
-                <a   class="btn btn-primary btn-block loginButtons" href="#/profile/{{model.user._id}}/product">Continue Shopping</a>
+                <a   class="btn btn-primary btn-block loginButtons" href="">Purchase</a>
+                <a  ng-click="model.addToCart( model.product)" class="btn btn-primary btn-block loginButtons" href="">Save Item</a>
+                <a   class="btn btn-primary btn-block loginButtons" href="#/profile/{{model.userId}}/product">Continue Shopping</a>
 
             </div>
         </div>
