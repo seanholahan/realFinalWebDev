@@ -73,6 +73,10 @@
                 controllerAs: "model"
             })
 
+            .when("/sean" ,{
+                templateUrl: "views/seanHomePage.html"
+        })
+
             .when("/profile/:uid/edit", {
                 templateUrl: "views/user/profile-edit.view.html",
                 controller: "ProfileController",

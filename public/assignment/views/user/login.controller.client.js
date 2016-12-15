@@ -13,11 +13,11 @@
             var promise = UserService.findUserByCredentials(user.username, user.password);
             promise
                 .success(function(user){
-
-                    if(user === '0' || user === "") {
+                    if(user[0] === '0' || user[0] === "" || user[0] === undefined) {
                         vm.error = "No such user";
                     } else {
-                        $location.url("/user/" + user._id);
+
+                        $location.url("/profile/" + user[0]._id);
                     }
                 })
                 .error(function(bbbb){

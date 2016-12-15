@@ -19,6 +19,22 @@ module.exports = function() {
 
 
 
+/*module.exports = function () {
+    var mongoose = require("mongoose");
+    var UserSchema = mongoose.Schema({
+        _user: {type: mongoose.Schema.Types.ObjectId, ref:"UserModel"},
+        username: String,
+        password: String,
+        passwordVerify: String,
+        first: String,
+        last: String,
+        email: String,
+        products: [{type: mongoose.Schema.Types.ObjectId, ref: 'ProductModel'}],
+        dateCreated: {type: Date, default: (new Date()).getTime()}
+    }, {collection: 'user'});
+    return UserSchema;
+}*/
+
 module.exports = function () {
     var mongoose = require("mongoose");
     var UserSchema = mongoose.Schema({

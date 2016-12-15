@@ -31,6 +31,8 @@
             console.log(vm.productId, vm.userId, "vm");
             console.log(product);
             ProductService.addToCart(product, vm.userId);
+            $location.url("/profile/"+vm.userId);
+
 
         }
 

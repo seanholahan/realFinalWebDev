@@ -2,13 +2,8 @@
 <div class="container">
 
     <h1>Hello, {{model.user.first}} {{model.user.last}}</h1>
-    <h2>Username: {{model.user.username}}</h2>
-    <h2>Email: {{model.user.email}}</h2>
-
-
-
-
-{{model}}
+    <h2 style="color:white">Username: {{model.user.username}}</h2>
+    <h2 style="color:white">Email: {{model.user.email}}</h2>
 
     <div class="filterContainer">
         <div ng-repeat="product in model.user.products" class="list-group-item">

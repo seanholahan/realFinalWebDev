@@ -1,9 +1,5 @@
 module.exports = function(app, model, $routeparams) {
-
-
-
-
-
+    app.get("/api/user/:username/password/:password", login);
     app.get('/api/user', findUser);
     app.post('/api/login', findUserByCredentials);
     app.post('/api/user', createUser);
@@ -19,6 +15,26 @@ module.exports = function(app, model, $routeparams) {
                 res.json(products);
             })
 
+    }
+
+    function login(req, res) {
+        var username = req.params.username;
+        var password = req.params.password;
+        model.userModel
+            .findUserByCredentials(username, password)
+            .then(
+                function (user) {
+                    console.log(user,"this is what we are finding")
+                    if(user) {
+                        res.json(user);
+                    } else {
+                        res.sendStatus('0');
+                    }
+                },
+                function (error) {
+                    res.sendStatus(400).send(error);
+                }
+            );
     }
 
     function unregisterUser(req, res) {
