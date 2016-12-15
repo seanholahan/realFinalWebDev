@@ -13,8 +13,14 @@
             var promise = UserService.findUserByCredentials(user.username, user.password);
             promise
                 .success(function(user){
+                    console.log("FUCKER");
                     if(user[0] === '0' || user[0] === "" || user[0] === undefined) {
                         vm.error = "No such user";
+                    }
+
+                    else if (user[0].username === "admin") {
+                        $location.url("/productList");
+
                     } else {
 
                         $location.url("/profile/" + user[0]._id);
