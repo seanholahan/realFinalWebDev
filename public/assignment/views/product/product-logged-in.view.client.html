@@ -43,13 +43,14 @@
                 <h3 class = "title">{{model.product.title}}</h3>
                 <h4 class = "description">Size: {{model.product.size}}<br>${{model.product.price}}<br>{{model.product.description}}</h4>
                 <a   class="btn btn-primary btn-block loginButtons" href="">Purchase</a>
-                <a  ng-click="model.addToCart( model.product)" class="btn btn-primary btn-block loginButtons" href="">Save Item</a>
+                <a  ng-click="model.addToCart( model.product)" class="btn btn-primary btn-block loginButtons" href="">Save Item to Cart</a>
                 <a   class="btn btn-primary btn-block loginButtons" href="#/profile/{{model.userId}}/product">Continue Shopping</a>
+                <a  href="#/profile/{{model.userId}}"  class="btn btn-primary btn-block loginButtons " href="">view profile/cart</a>
 
             </div>
         </div>
 
-    </div>
+    </div>{{model}}
 </div>
 
 
